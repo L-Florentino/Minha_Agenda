@@ -39,7 +39,9 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation("com.airbnb.android:lottie:3.0.1")
+    implementation("com.google.firebase:firebase-analytics:17.2.2")
     testImplementation(libs.junit)
+    implementation ("com.google.android.material:material:1.4.0")
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }
