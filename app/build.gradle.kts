@@ -42,6 +42,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics:17.2.2")
     testImplementation(libs.junit)
     implementation ("com.google.android.material:material:1.4.0")
+    implementation ("com.google.firebase:firebase-auth:20.0.1")
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }
