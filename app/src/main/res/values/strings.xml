@@ -14,4 +14,7 @@
     <string name="RegistrarUsuario">Registrar-se</string>
     <string name="TenhoumacontaTXT">Tenho uma conta</string>
 
+    <!-- Menu Principal -->
+    <string name="EncerrarSessao">Sair</string>
+
 </resources>
