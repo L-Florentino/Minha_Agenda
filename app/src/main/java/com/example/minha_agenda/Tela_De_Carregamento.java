@@ -10,7 +10,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class Tela_De_Carregamento extends AppCompatActivity {
+
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,13 +23,16 @@ public class Tela_De_Carregamento extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_tela_de_carregamento);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+
         int Tempo = 3000;
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(Tela_De_Carregamento.this, MainActivity.class));
-                finish();
+                /*startActivity(new Intent(Tela_De_Carregamento.this, MainActivity.class));
+                finish();*/
+                VerificarUsuario();
             }
         },Tempo);
 
@@ -33,5 +41,17 @@ public class Tela_De_Carregamento extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    private void VerificarUsuario(){
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+        if (firebaseUser == null){
+            startActivity(new Intent(Tela_De_Carregamento.this, MainActivity.class));
+            finish();
+        }else {
+            startActivity(new Intent(Tela_De_Carregamento.this, MenuPrincipal.class));
+            finish();
+        }
     }
 }
