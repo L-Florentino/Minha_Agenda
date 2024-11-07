@@ -17,4 +17,11 @@
     <!-- Menu Principal -->
     <string name="EncerrarSessao">Sair</string>
 
+    <!-- Atividade de Login -->
+    <string name="IniciarSessaoTXT">Iniciar Sessão</string>
+    <string name="EmailLogin">E-mail</string>
+    <string name="PassPoling">Senha</string>
+    <string name="Btn_Logeo">Entrar</string>
+    <string name="NovoUsuarioTXT">Não tem uma conta?. Registre-se</string>
+
 </resources>
