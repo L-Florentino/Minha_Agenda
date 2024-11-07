@@ -2,7 +2,7 @@
     <string name="app_name">Minha Agenda</string>
 
     <!-- MAIN ACTIVITY -->
-    <string name="Btn_Login">Login</string>
+    <string name="Btn_Login">Entrar</string>
     <string name="Btn_Registro">Registrar-se</string>
 
     <!-- Actividade de Registro -->

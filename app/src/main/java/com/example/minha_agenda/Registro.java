@@ -37,19 +37,20 @@ public class Registro extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     ProgressDialog progressDialog;
 
-    //
     String nome = " ", email = " ", password = "", confirmarpassword = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_registro);
 
+        // Configurando a ActionBar com verificação de null
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Registrar");
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+        if (actionBar != null) {
+            actionBar.setTitle("Registrar");
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowHomeEnabled(true);
+        }
 
         NomeEt = findViewById(R.id.NomeEt);
         EmailEt = findViewById(R.id.EmailEt);
@@ -67,7 +68,6 @@ public class Registro extends AppCompatActivity {
         RegistrarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //
                 ValidarDados();
             }
         });
@@ -75,7 +75,6 @@ public class Registro extends AppCompatActivity {
         TenhoumacontaTXT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //
                 startActivity(new Intent(Registro.this, Login.class));
             }
         });
@@ -111,12 +110,11 @@ public class Registro extends AppCompatActivity {
         progressDialog.setMessage("Criando sua conta...");
         progressDialog.show();
 
-        //Criando um usuário no Firebase
+        // Criando um usuário no Firebase
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        //
                         SalvarInformacao();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -132,7 +130,7 @@ public class Registro extends AppCompatActivity {
         progressDialog.setMessage("Salvando suas informações");
         progressDialog.dismiss();
 
-        //Obtendo o id do usuário atual
+        // Obtendo o id do usuário atual
         String uid = firebaseAuth.getUid();
 
         HashMap<String, String> Dados = new HashMap<>();
@@ -156,7 +154,7 @@ public class Registro extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         progressDialog.dismiss();
-                        Toast.makeText(Registro.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Registro.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
