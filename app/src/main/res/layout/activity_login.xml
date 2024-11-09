@@ -35,7 +35,60 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <EditText
+                android:id="@+id/EmailLogin"
+                android:hint="@string/EmailLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/icone_email"
+                android:drawablePadding="10dp"
+                android:padding="20dp"
+                android:fontFamily="@font/worksans"
+                android:inputType="textEmailAddress"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:layout_marginTop="15dp">
+
+            <EditText
+                android:id="@+id/PassLogin"
+                android:hint="@string/PassLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/icone_password"
+                android:drawablePadding="10dp"
+                android:padding="20dp"
+                android:fontFamily="@font/worksans"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/Btn_Entrar"
+            android:text="@string/Btn_Entrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/worksans"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/NovoUsuarioTXT"
+            android:text="@string/NovoUsuarioTXT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:fontFamily="@font/worksans"
+            android:layout_marginTop="20dp"/>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </RelativeLayout>

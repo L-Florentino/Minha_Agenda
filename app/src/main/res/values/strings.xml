@@ -5,7 +5,7 @@
     <string name="Btn_Login">Entrar</string>
     <string name="Btn_Registro">Registrar-se</string>
 
-    <!-- Actividade de Registro -->
+    <!-- Atividade de Registro -->
     <string name="CriarContaTXT">Criar uma conta</string>
     <string name="NomeEt">Nome</string>
     <string name="EmailEt">E-mail</string>
@@ -20,8 +20,8 @@
     <!-- Atividade de Login -->
     <string name="IniciarSessaoTXT">Iniciar Sessão</string>
     <string name="EmailLogin">E-mail</string>
-    <string name="PassPoling">Senha</string>
-    <string name="Btn_Logeo">Entrar</string>
-    <string name="NovoUsuarioTXT">Não tem uma conta?. Registre-se</string>
+    <string name="PassLogin">Senha</string>
+    <string name="Btn_Entrar">Entrar</string>
+    <string name="NovoUsuarioTXT">Não tem uma conta? Registre-se</string>
 
 </resources>
