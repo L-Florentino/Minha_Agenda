@@ -24,4 +24,9 @@
     <string name="Btn_Entrar">Entrar</string>
     <string name="NovoUsuarioTXT">Não tem uma conta? Registre-se</string>
 
+    <!-- Menu Principal -->
+    <string name="BemvindoPrincipal">Bem vindo(a)!</string>
+    <string name="NomesPrincipal"> -- </string>
+    <string name="EmailPrincipal"> -- </string>
+
 </resources>
