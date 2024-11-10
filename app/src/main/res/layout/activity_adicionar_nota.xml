@@ -70,7 +70,7 @@
 
             <!-- Botão para abrir o calendário -->
             <Button
-                android:id="@+id/Calendario"
+                android:id="@+id/Btn_Calendario"
                 android:text="@string/Btn_Calendario"
                 app:icon="@drawable/icone_calendario"
                 android:layout_width="wrap_content"
