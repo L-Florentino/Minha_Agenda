@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Minha_Agenda"
         tools:targetApi="31">
         <activity
+            android:name=".Perfil.Perfil_Usuario"
+            android:exported="false" />
+        <activity
+            android:name=".NotasArquivadas.Notas_Arquivadas"
+            android:exported="false" />
+        <activity
+            android:name=".ListarNotas.Listar_Notas"
+            android:exported="false" />
+        <activity
+            android:name=".AdicionarNota.Adicionar_Nota"
+            android:exported="false" />
+        <activity
             android:name=".MenuPrincipal"
             android:exported="false" />
         <activity

@@ -14,8 +14,6 @@
     <string name="RegistrarUsuario">Registrar-se</string>
     <string name="TenhoumacontaTXT">Tenho uma conta</string>
 
-    <!-- Menu Principal -->
-    <string name="EncerrarSessao">Sair</string>
 
     <!-- Atividade de Login -->
     <string name="IniciarSessaoTXT">Iniciar Sessão</string>
@@ -26,7 +24,15 @@
 
     <!-- Menu Principal -->
     <string name="BemvindoPrincipal">Bem vindo(a)!</string>
+    <string name="UidPrincipal"> -- </string>
     <string name="NomesPrincipal"> -- </string>
     <string name="EmailPrincipal"> -- </string>
+
+    <string name="AdicionarNotas">Adicionar</string>
+    <string name="ListarNotas">Minhas Notas</string>
+    <string name="Arquivados">Arquivados</string>
+    <string name="Perfil">Perfil</string>
+    <string name="Sobre">Sobre</string>
+    <string name="EncerrarSessao">Sair</string>
 
 </resources>

@@ -17,7 +17,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="135dp"
             app:cardBackgroundColor="@color/teal_700"
             app:cardUseCompatPadding="true"
             android:padding="0.2dp"
@@ -44,6 +44,18 @@
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"/>
 
+                <!-- Nomes -->
+                <TextView
+                    android:id="@+id/UidPrincipal"
+                    android:text="@string/UidPrincipal"
+                    android:visibility="gone"
+                    android:textColor="#fff"
+                    android:fontFamily="@font/worksans"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Nomes -->
                 <TextView
                     android:id="@+id/NomePrincipal"
                     android:text="@string/NomesPrincipal"
@@ -54,6 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
+                <!-- Email -->
                 <TextView
                     android:id="@+id/EmailPrincipal"
                     android:text="@string/EmailPrincipal"
@@ -69,11 +82,192 @@
 
         </androidx.cardview.widget.CardView>
 
-        <Button
-            android:id="@+id/EncerrarSessao"
-            android:text="@string/EncerrarSessao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 1 - 2 -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:weightSum="2">
+
+                <!-- Opção 1 -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/adicionar"/>
+
+                    <Button
+                        android:id="@+id/AdicionarNotas"
+                        android:text="@string/AdicionarNotas"
+                        android:enabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/worksans"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!-- Opção 2 -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/lista"/>
+
+                    <Button
+                        android:id="@+id/ListarNotas"
+                        android:text="@string/ListarNotas"
+                        android:enabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/worksans"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- 3 - 4 -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:weightSum="2">
+
+                <!-- Opção 3 -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/arquivados"/>
+
+                    <Button
+                        android:id="@+id/Arquivados"
+                        android:text="@string/Arquivados"
+                        android:enabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/worksans"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!-- Opção 4 -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/perfil"/>
+
+                    <Button
+                        android:id="@+id/Perfil"
+                        android:text="@string/Perfil"
+                        android:enabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/worksans"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- 5 - 6 -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:weightSum="2">
+
+                <!-- Opção 5 -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/sobre"/>
+
+                    <Button
+                        android:id="@+id/Sobre"
+                        android:text="@string/Sobre"
+                        android:enabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/worksans"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!-- Opção 6 -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/sair"/>
+
+                    <Button
+                        android:id="@+id/EncerrarSessao"
+                        android:text="@string/EncerrarSessao"
+                        android:enabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/worksans"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
