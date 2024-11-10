@@ -35,4 +35,15 @@
     <string name="Sobre">Sobre</string>
     <string name="EncerrarSessao">Sair</string>
 
+    <!-- Adicionar Nota -->
+    <string name="Uid_Usuario">Uid do Usuário</string>
+    <string name="Email_usuario">E-mail do usuário</string>
+    <string name="Data_hora_atual">Data e hora atual</string>
+    <string name="Titulo"> Título </string>
+    <string name="Descricao">Descrição</string>
+    <string name="Btn_Calendario">Calendário</string>
+    <string name="Data"> 00/00/0000 </string>
+    <string name="Estado">Não finalizado</string>
+
+
 </resources>
