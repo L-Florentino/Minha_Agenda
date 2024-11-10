@@ -45,5 +45,8 @@
     <string name="Data"> 00/00/0000 </string>
     <string name="Estado">Não finalizado</string>
 
+    <!-- Menu -->
+    <string name="Adicionar_Nota_BD">Adicionar</string>
+
 
 </resources>

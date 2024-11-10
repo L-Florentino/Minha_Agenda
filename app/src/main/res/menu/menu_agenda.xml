@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/menu/menu_agenda.xml -->
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/Adicionar_Nota_BD"
+        android:icon="@drawable/icone_add_nota"
+        android:title="@string/Adicionar_Nota_BD"
+        app:showAsAction="ifRoom">
+
+    </item>
+</menu>
