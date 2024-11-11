@@ -1,6 +1,8 @@
 package com.example.minha_agenda.ListarNotas;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,8 +26,12 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import com.example.minha_agenda.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class Listar_Notas extends AppCompatActivity {
 
@@ -92,7 +98,9 @@ public class Listar_Notas extends AppCompatActivity {
 
                     @Override
                     public void onItemLongClick(View view, int position) {
-                        // Toast.makeText(Listar_Notas.this, "on item long click", Toast.LENGTH_SHORT).show();
+
+                        String id_nota = getItem(position).getId_nota();
+
                         // Declarando as vistas
                         Button CD_Apagar, CD_Atualizar;
 
@@ -106,7 +114,8 @@ public class Listar_Notas extends AppCompatActivity {
                         CD_Apagar.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Toast.makeText(Listar_Notas.this, "Nota apagada", Toast.LENGTH_SHORT).show();
+                                ApagarNota(id_nota);
+                                dialog.dismiss();
                             }
                         });
                         
@@ -114,6 +123,7 @@ public class Listar_Notas extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
                                 Toast.makeText(Listar_Notas.this, "Nota atualizada", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
                             }
                         });
 
@@ -130,6 +140,45 @@ public class Listar_Notas extends AppCompatActivity {
 
         recyclerviewNotas.setLayoutManager(linearLayoutManager);
         recyclerviewNotas.setAdapter(firebaseRecyclerAdapter);
+    }
+
+    private void ApagarNota(String id_nota) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(Listar_Notas.this);
+        builder.setTitle("Apagar nota");
+        builder.setMessage("Deseja realmente apagar esta nota?");
+        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Apagar nota no BD
+                Query query = BANCO_DE_DADOS.orderByChild("id_nota").equalTo(id_nota);
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds : snapshot.getChildren()){
+                            ds.getRef().removeValue();
+                        }
+                        Toast.makeText(Listar_Notas.this, "Nota apagada", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                        Toast.makeText(Listar_Notas.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+        builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(Listar_Notas.this, "Cancelado pelo usuário", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.create().show();
+
     }
 
     @Override
