@@ -44,9 +44,6 @@ public class ViewHolder_Nota extends RecyclerView.ViewHolder {
         });
     }
 
-    private int getBindingAdapterPosition() {
-        return 0;
-    }
 
     public void ColetarDados(Context context, String id_nota, String uid_usuario, String email_usuario,
                              String data_hora_atual, String titulo, String descricao, String data_nota, String estado) {

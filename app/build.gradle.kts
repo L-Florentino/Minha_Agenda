@@ -33,17 +33,23 @@ android {
 }
 
 dependencies {
-
+    // AndroidX Libraries
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+
     implementation("com.airbnb.android:lottie:3.0.1")
-    implementation("com.google.firebase:firebase-analytics:17.2.2")
+
+    // Firebase Dependencies
+    implementation("com.google.firebase:firebase-analytics-ktx:21.1.1") // versão mais recente
+    implementation("com.google.firebase:firebase-auth-ktx:22.1.1")      // versão mais recente
+    implementation("com.google.firebase:firebase-database-ktx:20.2.1")  // versão mais recente
+    implementation("com.firebaseui:firebase-ui-database:8.0.0")         // Verifique compatibilidade com versões Firebase mais novas
+
+    // Test Dependencies
     testImplementation(libs.junit)
-    implementation ("com.google.android.material:material:1.4.0")
-    implementation ("com.google.firebase:firebase-auth:20.0.1")
-    implementation ("com.google.firebase:firebase-database:19.6.0")
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }
+
