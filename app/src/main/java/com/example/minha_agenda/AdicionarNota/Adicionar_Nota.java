@@ -3,11 +3,14 @@ package com.example.minha_agenda.AdicionarNota;
 import static com.example.minha_agenda.R.*;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.minha_agenda.R;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 
 public class Adicionar_Nota extends AppCompatActivity {
@@ -27,6 +31,8 @@ public class Adicionar_Nota extends AppCompatActivity {
     TextView Uid_Usuario, Email_usuario, Data_hora_atual, Data, Estado;
     EditText Titulo, Descricao;
     Button Btn_Calendario;
+
+    int dia, mes, ano;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,50 @@ public class Adicionar_Nota extends AppCompatActivity {
         IniciarVariaveis();
         ObterDados();
         Obter_Data_Hora();
+
+        Btn_Calendario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar calendario = Calendar.getInstance();
+
+                dia = calendario.get(Calendar.DAY_OF_MONTH);
+                mes = calendario.get(Calendar.MONTH);
+                ano = calendario.get(Calendar.YEAR);
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(Adicionar_Nota.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int AnoSelecionado, int MesSelecionado, int DiaSelecionado) {
+
+                        String diaFormatado, mesFormatado;
+
+                        // Formatação do dia
+                        if (DiaSelecionado < 10){
+                            diaFormatado = "0"+ String.valueOf(DiaSelecionado);
+                            // Antes: 7/11/2024 - Agora: 07/11/2024
+                        }else {
+                            diaFormatado = String.valueOf(DiaSelecionado);
+                            // Exemplo: 13/08/2024
+                        }
+
+                        // Formatação do mês
+                        int Mes = MesSelecionado + 1;
+
+                        if (Mes < 10){
+                            mesFormatado = "0"+ String.valueOf(Mes);
+                            // Antes: 07/8/2024 - Agora: 07/08/2024
+                        }else {
+                            mesFormatado = String.valueOf(Mes);
+                            // Exemplo: 11/10/2024 - 11/11/2024 - 11/12/2024
+                        }
+
+                        // Definir data no TextView
+                        Data.setText(diaFormatado + "/" + mesFormatado + "/" + AnoSelecionado);
+                    }
+                }
+                , ano, mes, dia);
+                datePickerDialog.show();
+            }
+        });
     }
 
     private void IniciarVariaveis() {
