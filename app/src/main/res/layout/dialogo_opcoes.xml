@@ -31,16 +31,20 @@
         android:id="@+id/CD_Apagar"
         android:text="@string/CD_Apagar"
         android:layout_marginTop="10dp"
+        app:icon="@drawable/icone_apagar_cd"
         android:fontFamily="@font/worksans"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/CD_Atualizar"
         android:text="@string/CD_Atualizar"
         android:layout_marginTop="10dp"
+        app:icon="@drawable/icone_atualizar_cd"
         android:fontFamily="@font/worksans"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
