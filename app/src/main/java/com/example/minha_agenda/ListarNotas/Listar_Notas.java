@@ -1,9 +1,11 @@
 package com.example.minha_agenda.ListarNotas;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -36,6 +38,7 @@ public class Listar_Notas extends AppCompatActivity {
     FirebaseRecyclerAdapter<Nota, ViewHolder_Nota> firebaseRecyclerAdapter;
     FirebaseRecyclerOptions<Nota> options;
 
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,7 @@ public class Listar_Notas extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         BANCO_DE_DADOS = firebaseDatabase.getReference("Notas_Publicadas");
+        dialog = new Dialog(Listar_Notas.this);
         listarNotasUsuarios();
     }
 
@@ -88,7 +92,32 @@ public class Listar_Notas extends AppCompatActivity {
 
                     @Override
                     public void onItemLongClick(View view, int position) {
-                        Toast.makeText(Listar_Notas.this, "on item long click", Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(Listar_Notas.this, "on item long click", Toast.LENGTH_SHORT).show();
+                        // Declarando as vistas
+                        Button CD_Apagar, CD_Atualizar;
+
+                        // Realizar a conexão com as vistas
+                        dialog.setContentView(R.layout.dialogo_opcoes);
+                        
+                        // Declarando as vistas
+                        CD_Apagar = dialog.findViewById(R.id.CD_Apagar);
+                        CD_Atualizar = dialog.findViewById(R.id.CD_Atualizar);
+                        
+                        CD_Apagar.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Toast.makeText(Listar_Notas.this, "Nota apagada", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        
+                        CD_Atualizar.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Toast.makeText(Listar_Notas.this, "Nota atualizada", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                        dialog.show();
                     }
                 });
                 return viewHolder_nota;

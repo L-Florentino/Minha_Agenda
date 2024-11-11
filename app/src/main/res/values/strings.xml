@@ -58,5 +58,9 @@
     <string name="Data_Item"> 00/00/0000 </string>
     <string name="Estado_Item">Não finalizado</string>
 
+    // Caixa de diálogo de opções
+    <string name="EscolhaOpcaoTXT">Escolha uma opção</string>
+    <string name="CD_Apagar">Apagar</string>
+    <string name="CD_Atualizar">Atualizar</string>
 
 </resources>
